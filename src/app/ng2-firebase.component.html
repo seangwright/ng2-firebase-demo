@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
+<ul>
+  <!-- use async ngFor -->
+  <li *ngFor="let item of people | async">
+    {{item.name}} / {{item.age}}
+  </li>
+  
+  <!-- use synchronus ngFor -->
+  <li *ngFor="let item of data; let i = index">
+    {{i}} - {{item}}
+  </li>
+</ul>
